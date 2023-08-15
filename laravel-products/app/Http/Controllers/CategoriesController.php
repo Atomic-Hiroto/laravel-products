@@ -4,24 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Category;
 
-class ProductsController extends Controller
+class CategoriesController extends Controller
 {
-    public function index()
-    {
-    return Product::with('images')->paginate(); 
+    /**
+     * Display a listing of the resource.
+     */
+    public function index() {
+        return "Here";
+        return Category::all();
     }
-
-public function show($id)
-{
-  return Product::with('images')->findOrFail($id);
-} 
-
-public function byCategory(string $category)
-{
-  return Product::where('category', $category)->get();
-}
+    
 
     /**
      * Show the form for creating a new resource.
@@ -39,6 +33,13 @@ public function byCategory(string $category)
         //
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
